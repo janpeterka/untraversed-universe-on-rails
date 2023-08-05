@@ -1,0 +1,17 @@
+<h1> #{@ship.name} </h1>
+<h4> #{@ship.description} </h4>
+<h4> owned by #{link_to(@ship.player.name, @ship.player)} </h4>
+
+
+<hr>
+
+<div>
+  <h3>Stats:</h3>
+
+  span Sensors: #{@ship.sensors}   <br>
+  span Firepower: #{@ship.firepower}   <br>
+  span Durability: #{@ship.durability}   <br>
+  span Accomodation: #{@ship.accomodation} <br>
+  span Speed: #{@ship.speed} <br>
+
+</div>
