@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get 'players/new'
+  get 'players/create'
+  get 'players/show'
+  root :to => 'players#new'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  resources :players
 end
