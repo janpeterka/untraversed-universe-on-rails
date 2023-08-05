@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   resources :players
   resources :ships
   resources :planets
+  resources :towns
 end

@@ -1,4 +1,9 @@
 h1 =@planet.name
-
-h3 coordinates
 = @planet.coordinates
+
+h2 places of interest
+
+- @planet.towns.each do |town|
+  = link_to town.name, town
+  br
+

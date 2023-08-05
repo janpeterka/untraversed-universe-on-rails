@@ -4,19 +4,19 @@ class OnboardingController < ApplicationController
   end
 
   def create_player
-    redirect_to onboarding_choose_background_path unless current_player.nil?
+    redirect_to onboarding_choose_background_path unless Current.player.nil?
 
     @player = Player.new
   end
 
   def choose_background
-    redirect_to onboarding_choose_ship_path unless current_player.qualities.nil?
+    redirect_to onboarding_choose_ship_path unless Current.player.qualities.nil?
 
-    @player = current_player
+    @player = Current.player
   end
 
   def choose_ship
-    redirect_to current_player unless current_player.ship.nil?
+    redirect_to Current.player unless Current.player.ship.nil?
 
     @ships = Ship.default_ships
   end

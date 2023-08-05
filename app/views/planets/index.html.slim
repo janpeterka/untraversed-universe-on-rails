@@ -1,5 +1,14 @@
 h1 Planets#index
 
+h2 All planets
+
+- @planets.each do |planet|
+  = link_to planet.name, planet
+  br
+  / = link_to 'Edit', edit_planet_path(planet)
+  / = link_to 'Destroy', planet, method: :delete, data: { confirm: 'Are you sure?' }
+
+
 = button_to(url: planets_path, method: :post, class: 'btn btn-primary') do
   | Create planet
 

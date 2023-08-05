@@ -4,7 +4,7 @@ class ShipsController < ApplicationController
 
   def create
     @ship = Ship.create_from(params[:ship_id].to_i)
-    @ship.player = current_player
+    @ship.player = Current.player
     @ship.save
 
     if @ship.save

@@ -14,13 +14,13 @@ class PlayersController < ApplicationController
   end
 
   def choose_background
-    @player = current_player
+    @player = Current.player
     Quality.create!(category: "background", name: params[:background], player: @player)
 
     redirect_to onboarding_choose_ship_path
   end
 
   def show
-    @player = current_player
+    @player = Current.player
   end
 end

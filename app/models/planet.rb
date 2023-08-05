@@ -1,5 +1,6 @@
 class Planet < ApplicationRecord
   belongs_to :discoverer, class_name: 'Player', foreign_key: 'discoverer_id'
+  has_many :towns
 
 
   def self.generate
@@ -8,7 +9,13 @@ class Planet < ApplicationRecord
     coordinate_y = rand(0..1000)
     coordinate_z = rand(0..1000)
 
-    Planet.create(name: , coordinate_x: , coordinate_y: , coordinate_z: , discoverer: current_player)
+    planet = Planet.create(name: , coordinate_x: , coordinate_y: , coordinate_z: , discoverer: Current.player)
+
+    rand(1..3).times do |i|
+      Town.generate(planet:)
+    end
+
+    planet
   end
 
   def coordinates
