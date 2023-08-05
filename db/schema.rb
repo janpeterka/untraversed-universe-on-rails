@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_05_162824) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_05_165000) do
+  create_table "planets", force: :cascade do |t|
+    t.string "name"
+    t.integer "coordinate_x"
+    t.integer "coordinate_y"
+    t.integer "coordinate_z"
+    t.integer "discoverer_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["discoverer_id"], name: "index_planets_on_discoverer_id"
+  end
+
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -41,6 +52,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_05_162824) do
     t.index ["player_id"], name: "index_ships_on_player_id"
   end
 
+  add_foreign_key "planets", "players", column: "discoverer_id"
   add_foreign_key "qualities", "players"
   add_foreign_key "ships", "players"
 end
