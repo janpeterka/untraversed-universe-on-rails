@@ -1,3 +1,12 @@
 h1 Hi #{@player.name}!
 
-h4 Your ship is the #{link_to(@player.ship.name, @player.ship)}
+h2 Your ship is
+= link_to @player.ship.name, @player.ship
+
+h2 Your qualities are:
+
+- @player.qualities.each do |quality|
+  = quality.category
+  span \  \
+  = quality.name
+  br

@@ -1,0 +1,16 @@
+<p> Ok, I will call you #{@player.name}</p>
+    <p> And now for important issues.. </p>
+    <p> Why did you decide to become a captain? </p>
+
+    <p> Maybe you are <strong>drawn in by the adventure</strong>.. </p>
+    <p> Or you are <strong>running from law</strong>, possibly.. </p>
+    <p> You belive you can <strong>get rich</strong> this way? </p>
+
+    = form_with url: players_choose_background_path
+      <select name="background">
+        <option value="Running from law"> Running from law! </option>
+        <option value="From poor family"> I want to get rich! </option>
+        <option value="Bored to death"> I need some adventure! </option>
+      </select>
+      <button type="submit"> , thats my reason </button>
+    </form>

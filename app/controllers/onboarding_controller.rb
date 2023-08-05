@@ -7,6 +7,10 @@ class OnboardingController < ApplicationController
     @player = Player.new
   end
 
+  def choose_background
+    @player = current_player
+  end
+
   def choose_ship
     @ships = Ship.default_ships
   end
