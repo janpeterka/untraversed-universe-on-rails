@@ -1,0 +1,10 @@
+<div id="navbar" style="background-color: gray;">
+    = link_to "you", Current.player, style: "margin-right: 4rem;"
+
+    - if Current.player.ship.present?
+        = link_to "shipdeck", Current.player.ship, style: "margin-right: 4rem;"
+
+    <!-- <a href="{{ url_for('LocationView:index') }}" class="ms-2 me-2 {% if not player.ship %}visibility-hidden{% endif %}"> location </a> -->
+
+    <!-- <a href="{{ url_for('PlayerView:delete_player') }}" class="float-end"> restart! </a> -->
+</div>
