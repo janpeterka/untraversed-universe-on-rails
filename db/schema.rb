@@ -10,11 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_05_152346) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_05_153851) do
   create_table "players", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ships", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "description", null: false
+    t.integer "sensors"
+    t.integer "firepower"
+    t.integer "durability"
+    t.integer "accomodation"
+    t.integer "speed"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_ships_on_name"
   end
 
 end

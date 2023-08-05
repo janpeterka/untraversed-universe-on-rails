@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  get 'players/new'
-  get 'players/create'
-  get 'players/show'
   root :to => 'players#new'
+  get 'ships/index'
+  get 'onboarding/index'
 
   resources :players
+  resources :ships
+
 end
