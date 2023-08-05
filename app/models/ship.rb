@@ -1,9 +1,17 @@
 class Ship < ApplicationRecord
+  belongs_to :player, optional: false
   validates :name, presence: true
   validates :description, presence: true
 
+  def self.create_from(id)
+    original_ship = default_ships.find { |ship| ship.id == id }
+    p original_ship
+    ship = original_ship.dup
+    ship
+  end
+
   def self.default_ships
-    {
+    data = {
       "1": {
           "name": "Bumblebee",
           "description": "Great ship for transporting goods of any kind.",
@@ -41,5 +49,11 @@ class Ship < ApplicationRecord
           "speed": "3",
       },
     }
+    ships = []
+    data.each do |key, values|
+      ships << Ship.new({id: key.to_s, **values})
+    end
+    ships
+    p ships
   end
 end

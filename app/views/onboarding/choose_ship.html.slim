@@ -1,0 +1,13 @@
+.text-center
+  <p> What good is a captain without a ship!</p>
+  <p> Luckily, I have something for you..</p>
+  <p> Don't worry, you will pay me in time.</p>
+  <p> Now, choose your ship: </p>
+
+  = form_with model: @ship, url: ships_path, local: true do |f|
+    <select name="ship_id">
+      - @ships.each do |ship|
+        <option name="#{ship.name}" value=#{ship.id}> #{ship.name} (#{ship.description})  </option>
+    </select>
+    <button type="submit"> I want this! </button>
+  </form>

@@ -5,9 +5,9 @@ class PlayersController < ApplicationController
 
   def create
     @player = Player.new(name: params[:name])
-    p @player
+
     if @player.save
-      redirect_to @player
+      redirect_to onboarding_choose_ship_path
     else
       render :new, status: :unprocessable_entity
     end

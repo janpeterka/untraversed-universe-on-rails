@@ -1,0 +1,10 @@
+.text-center
+  p So..
+  p You decided to become a captain, did you?
+    <p> That's not an easy way of life, you know? </p>
+    <p> But first things first.. </p>
+    <p> How should I call you now? </p>
+
+  = form_with model: @player
+    <button type="submit">Call me..</button>
+    <input type="text" name="name">
